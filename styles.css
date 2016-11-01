@@ -1,0 +1,10 @@
+header, h1 {
+  margin: 20px auto;
+  display: flex;
+}
+
+.game-canvas {
+  border: 1px solid black;
+  margin: auto;
+  display: block;
+}
