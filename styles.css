@@ -11,5 +11,5 @@ header, h1 {
   border: 1px solid black;
   margin: auto;
   display: block;
-  background: url(images/pong-field.png);
+  /*background: url(images/pong-field.png);*/
 }
