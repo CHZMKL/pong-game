@@ -2,9 +2,40 @@ body {
   background-color: #F8F8FF;
 }
 
-header, h1 {
+/*header, h1 {
   margin: 20px auto;
   display: flex;
+  border: 1px solid black;
+}*/
+
+header {
+  width: 600px;
+  height: 100px;
+  margin: auto;
+}
+
+h1 {
+  padding-top:50px;
+  text-align: center;
+}
+
+
+.container-scores {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 600px;
+  height: 50px;
+  border: 1px solid black;
+}
+
+.left-score, .right-score {
+  text-align: center;
+  flex: auto;
+  width: 200px;
+  height: 40px;
+  border: 1px solid black;
+  padding-top: 5px;
 }
 
 .game-canvas {
