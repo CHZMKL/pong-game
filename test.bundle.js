@@ -169,15 +169,15 @@
 	//Ends the volley of the ball upon it's exit from the screen
 	Field.prototype.endVolley = function () {
 	  //Left Player Scores
-	  if (this.ball.x > this.x + this.width + 20) {
+	  if (this.ball.x > this.x + this.width + 40) {
 	    // this.gameState = false;
 	    this.leftScore += 1;
-	    // this.ball.x = 300;
-	    // this.ball.y = 200;
+	    this.ball.x = 300;
+	    this.ball.y = 200;
 	    $('#leftScore').text(this.leftScore);
 	  }
 	  //Right Player Scores
-	  if (this.ball.x + this.ball.width < this.x + 20) {
+	  if (this.ball.x + this.ball.width < this.x - 40) {
 	    // this.gameState = false;
 	    this.ball.x = 300;
 	    this.ball.y = 200;
