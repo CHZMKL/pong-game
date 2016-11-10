@@ -94,50 +94,6 @@
 
 	module.exports = Ball;
 
-	// Ball.prototype.isOnCeiling = function() {
-	//   console.log('Hit the top!');
-	//   return (this.y < 0);
-	// };
-	//
-	// Ball.prototype.bounceOffCieling = function() {
-	//   if (this.isOnCeiling()) {
-	//     this.directionY = -this.directionY;
-	//     // this.directionX = -this.directionX;
-	//   }
-	// };
-	//
-	// Ball.prototype.isOnFloor = function() {
-	//   return (this.y + this.height > 400);
-	// };
-	//
-	// Ball.prototype.bounceOffFloor = function() {
-	//   if (this.isOnFloor()) {
-	//     this.directionY = -this.directionY;
-	//     // this.directionX = -this.directionX;
-	//   }
-	// };
-
-	// Ball.prototype.bounceOffRightPaddle = function(paddleRight) {
-	//   if (this.x + this.width > paddleRight.x && this.y - this.height > paddleRight.y && this.y < paddleRight.y + paddleRight.height) {
-	//     this.directionX = -this.directionX;
-	//   }
-	// };
-	//
-	// Ball.prototype.bounceOffLeftPaddle = function(paddleLeft) {
-	//   if (this.x < paddleLeft.x + paddleLeft.width && this.y - this.height > paddleLeft.y && this.y < paddleLeft.y + paddleLeft.height) {
-	//     this.directionX = -this.directionX;
-	//   }
-	// };
-
-	// Ball.prototype.endVolley = function() {
-	//   if (this.x > 600) {
-	//     this.gameState = 1;
-	//   }
-	//   if (this.x + this.width < 0) {
-	//     this.gameState = 1;
-	//   }
-	// };
-
 /***/ },
 /* 3 */,
 /* 4 */,
@@ -469,21 +425,21 @@
 	    });
 
 	    it('should be able to move left', function () {
-	      assert.equal(ball.x, 254);
+	      assert.equal(ball.x, 304);
 	      ball.moveLeft();
-	      assert.equal(ball.x, 250);
+	      assert.equal(ball.x, 300);
 	    });
 
 	    it('should be able to move up', function () {
-	      assert.equal(ball.y, 600);
+	      assert.equal(ball.y, 200);
 	      ball.moveUp();
-	      assert.equal(ball.y, 596);
+	      assert.equal(ball.y, 196);
 	    });
 
 	    it('should be able to move down', function () {
-	      assert.equal(ball.y, 596);
+	      assert.equal(ball.y, 196);
 	      ball.moveDown();
-	      assert.equal(ball.y, 600);
+	      assert.equal(ball.y, 200);
 	    });
 	  });
 	});
