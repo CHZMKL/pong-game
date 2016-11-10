@@ -1,2 +1,3 @@
-require('./ball-test');
-require('./paddle-test');
+require('./ball-test.js');
+// require('./paddle-test.js');
+// require('./game-test.js');

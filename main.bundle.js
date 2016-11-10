@@ -102,6 +102,12 @@
 	function startGame() {
 	  field.start();
 	}
+
+	//Game End & Score Tracking
+	function restart() {
+	  field.endVolley();
+	}
+
 	function runGame() {
 	  field.run();
 	}
@@ -123,11 +129,6 @@
 	  }
 	});
 
-	//Game End & Score Tracking
-	function restart() {
-	  field.endVolley();
-	}
-
 	//Start Game Button that puts all objects into view
 	$('#startGame').on('click', function () {
 	  makeGameObjects();
@@ -137,6 +138,7 @@
 	//Game Run & Animation
 	$(document).on('keyup', function (event) {
 	  if (event.keyCode === 32 && field.gameState === false) {
+	    startGame();
 	    field.gameState = true;
 
 	    requestAnimationFrame(function gameLoop() {
@@ -182,7 +184,7 @@
 	  this.y = options.y || 200;
 	  this.height = options.height || 10;
 	  this.width = options.width || 10;
-	  this.speed = options.speed || 2;
+	  this.speed = options.speed || 4;
 	  this.directionX = this.speed;
 	  this.directionY = -this.speed;
 	  this.gameState = 0;
@@ -302,18 +304,20 @@
 	//Ends the volley of the ball upon it's exit from the screen
 	Field.prototype.endVolley = function () {
 	  //Left Player Scores
-	  if (this.ball.x > this.x + this.width) {
-	    this.gameState = true;
+	  if (this.ball.x > this.x + this.width + 20) {
+	    // this.gameState = false;
 	    this.leftScore += 1;
+	    // this.ball.x = 300;
+	    // this.ball.y = 200;
 	    $('#leftScore').text(this.leftScore);
-	    this.location.reload(false);
 	  }
 	  //Right Player Scores
-	  if (this.ball.x + this.ball.width < this.x) {
-	    this.gameState = true;
+	  if (this.ball.x + this.ball.width < this.x + 20) {
+	    // this.gameState = false;
+	    this.ball.x = 300;
+	    this.ball.y = 200;
 	    this.rightScore += 1;
 	    $('#rightScore').text(this.rightScore);
-	    this.location.reload(false);
 	  }
 	};
 	//All Field Functions Combined
