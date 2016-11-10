@@ -124,9 +124,9 @@
 	});
 
 	//Game End & Score Tracking
-	$(document).ready(function () {
-	  console.log('The Document is ready!');
-	});
+	function restart() {
+	  field.endVolley();
+	}
 
 	//Start Game Button that puts all objects into view
 	$('#startGame').on('click', function () {
@@ -252,7 +252,9 @@
 
 /***/ },
 /* 3 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(4);
 
 	function Field(ball, paddleLeft, paddleRight) {
 	  this.x = 0;
@@ -299,11 +301,19 @@
 	};
 	//Ends the volley of the ball upon it's exit from the screen
 	Field.prototype.endVolley = function () {
-	  if (this.ball.x > this.width) {
+	  //Left Player Scores
+	  if (this.ball.x > this.x + this.width) {
 	    this.gameState = true;
+	    this.leftScore += 1;
+	    $('#leftScore').text(this.leftScore);
+	    this.location.reload(false);
 	  }
+	  //Right Player Scores
 	  if (this.ball.x + this.ball.width < this.x) {
 	    this.gameState = true;
+	    this.rightScore += 1;
+	    $('#rightScore').text(this.rightScore);
+	    this.location.reload(false);
 	  }
 	};
 	//All Field Functions Combined
