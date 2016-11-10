@@ -47,8 +47,6 @@
 	const Paddle = __webpack_require__(1);
 	const Ball = __webpack_require__(2);
 	const Field = __webpack_require__(3);
-	// var leftScore = $('#leftScore');
-	// var rightScore = $('#rightScore');
 	var canvas = document.getElementById('game');
 	var ctx = canvas.getContext('2d');
 	var $ = __webpack_require__(4);
@@ -132,13 +130,12 @@
 	//Start Game Button that puts all objects into view
 	$('#startGame').on('click', function () {
 	  makeGameObjects();
-	  // startGame(field);
 	});
 
 	//Game Run & Animation
 	$(document).on('keyup', function (event) {
 	  if (event.keyCode === 32 && field.gameState === false) {
-	    startGame();
+	    startGame(field);
 	    field.gameState = true;
 
 	    requestAnimationFrame(function gameLoop() {
@@ -263,17 +260,17 @@
 	  if (this.ball.x > this.x + this.width + 40) {
 	    // this.gameState = false;
 	    this.leftScore += 1;
+	    $('#leftScore').text(this.leftScore);
 	    this.ball.x = 300;
 	    this.ball.y = 200;
-	    $('#leftScore').text(this.leftScore);
 	  }
 	  //Right Player Scores
 	  if (this.ball.x + this.ball.width < this.x - 40) {
 	    // this.gameState = false;
-	    this.ball.x = 300;
-	    this.ball.y = 200;
 	    this.rightScore += 1;
 	    $('#rightScore').text(this.rightScore);
+	    this.ball.x = 300;
+	    this.ball.y = 200;
 	  }
 	};
 	//All Field Functions Combined
