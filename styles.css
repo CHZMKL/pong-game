@@ -77,8 +77,7 @@ h1 {
  }
 
 .game-canvas {
-  border: 1px solid black;
-  margin: 0 auto 5px;
+  margin: 0 auto 2px;
   display: block;
-  background: url(images/pong-field.png);
+  background: url(images/pong-overlay.png);
 }
