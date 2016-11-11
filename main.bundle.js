@@ -142,7 +142,9 @@
 	      console.log('Test');
 	      makeGameObjects();
 	      runGame();
-	      requestAnimationFrame(gameLoop);
+	      if (field.gameState === true) {
+	        requestAnimationFrame(gameLoop);
+	      }
 	    });
 	  }
 	});
@@ -258,19 +260,19 @@
 	Field.prototype.endVolley = function () {
 	  //Left Player Scores
 	  if (this.ball.x > this.x + this.width + 40) {
-	    // this.gameState = false;
 	    this.leftScore += 1;
 	    $('#leftScore').text(this.leftScore);
 	    this.ball.x = 300;
 	    this.ball.y = 200;
+	    this.gameState = false;
 	  }
 	  //Right Player Scores
 	  if (this.ball.x + this.ball.width < this.x - 40) {
-	    // this.gameState = false;
 	    this.rightScore += 1;
 	    $('#rightScore').text(this.rightScore);
 	    this.ball.x = 300;
 	    this.ball.y = 200;
+	    this.gameState = false;
 	  }
 	};
 	//All Field Functions Combined
