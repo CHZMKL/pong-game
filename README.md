@@ -1,31 +1,7 @@
-# Game Time Starter Kit
+# Pong aka Ping Pong Playa
 
-To install the dependencies:
+[View the application.](https://chzmkl.github.io/pong-game/)
 
-```
-npm install
-```
+PingPongPlaya, is a take on the classic 'Pong' game introduced by Atari in 1972. Currently a 2-Player only game with future modifications planned which include - A.I opponents, multiple levels, power-ups and much more. Created by [Chaz-Mykl Gormley](https://github.com/CHZMKL) using JavaScript, jQuery, JSON, HMTL5 Canvas & CSS.
 
-To fire up a development server:
-
-```
-npm start
-```
-
-Once the server is running, you can visit:
-
-* `http://localhost:8080/webpack-dev-server/` to run your application.
-* `http://localhost:8080/webpack-dev-server/test.html` to run your test suite in the browser.
-
-To build the static files:
-
-```js
-npm run build
-```
-
-
-To run tests in Node:
-
-```js
-npm test
-```
+![alt_tag](images/PongScreenGrab.png)
